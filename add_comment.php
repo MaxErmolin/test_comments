@@ -31,6 +31,7 @@ else{
     $comment = mysqli_fetch_assoc($result);
     if(!is_dir("img/")) 
         mkdir("img/");
+    if (isset($_FILES['img']))
     move_uploaded_file($_FILES['img']['tmp_name'], 'img/'.$id.'.jpg');
     if (file_exists("img/".$id.".jpg")){
         $size = getimagesize("img/".$id.".jpg");
